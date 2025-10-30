@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Tags -->
+    <title>Convert PDF to Word Instantly | No Signup Required</title>
+    <meta name="description" content="Instantly convert PDF to Word documents. No signup, no email, no watermarks. Secure and free.">
+    <meta name="keywords" content="pdf to word converter, free pdf to word, convert pdf to docx online">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://your-username.github.io">
+    <link rel="stylesheet" href="Css.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with modern glass effect -->
+        <header class="glass-header">
+            <h1>✨ PDF to Word Converter</h1>
+            <p class="subtitle">Convert in seconds • No signup • 100% Secure</p>
+        </header>
+
+        <!-- Main content area -->
+        <main class="glass-main">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📄</div>
+                <h2>Upload Your PDF</h2>
+                <p>Drag & drop or click to select</p>
+                <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
+                <button class="upload-btn" onclick="document.getElementById('pdfInput').click()">
+                    Choose PDF File
+                </button>
+            </div>
+
+            <!-- Progress bar (hidden by default) -->
+            <div id="progressContainer" class="progress-container" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">Processing your document...</p>
+            </div>
+
+            <!-- Result area (hidden by default) -->
+        <div id="resultArea" class="result-area" style="display: none;">
+            <div class="success-icon">✅</div>
+            <h3>Conversion Complete!</h3>
+            <p>Your Word document is ready to download!</p>
+            
+            <!-- Download button -->
+            <a id="downloadLink" class="download-btn" download>📥 Download Word Document (.docx)</a>
+            
+            <!-- Text preview with copy button -->
+            <div style="margin-top: 20px;">
+                <button id="copyBtn" class="upload-btn">📋 Copy Text</button>
+                <textarea id="textPreview" readonly style="width: 100%; height: 200px; margin-top: 10px; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); font-family: monospace;"></textarea>
+            </div>
+            
+            <!-- Convert another button -->
+            <button onclick="convertAnother()" class="upload-btn" style="margin-top: 15px; background: rgba(255,255,255,0.2);">Convert Another PDF</button>
+            
+            <!-- Rating section -->
+            <div class="rating-section" id="ratingSection" style="opacity: 0; transition: opacity 0.5s;">
+                <p>Was this helpful? Rate us!</p>
+                <div class="stars" id="stars"></div>
+                <button class="share-btn" onclick="shareTool()">Share with Friends</button>
+            </div>
+        </div>
+        </main>
+
+        <!-- How it works section -->
+        <section class="glass-section">
+            <h3>🔒 How It Works</h3>
+            <div class="how-it-works">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>Upload your PDF file to our secure interface</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>We convert it to Word format instantly in your browser</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>Download your converted file - no data leaves your computer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="glass-footer">
+            <p>Made with ❤ | 100% Free | No Data Stored</p>
+        </footer>
+    </div>
+
+
+<!-- PDF.js for reading PDFs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+</script>
+<!-- docx library for creating Word documents -->
+<script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+<script src="myjs.js"></script>
+</body>
+</html>
